@@ -19,18 +19,19 @@ function determineHeightAndThenDrawPyramid() {
     
     var printSymbol = document.getElementById("symbol");
     
-    printSymbol.addEventListener("onchange", function() {
+    printSymbol.addEventListener("change", function() {
         determineHeightAndThenDrawPyramid()
     });
     
     var heightInput = document.getElementById("height");
-    heightInput.addEventListener("oninput", determineHeightAndThenDrawPyramid());
+    heightInput.addEventListener("input", determineHeightAndThenDrawPyramid());
     
     var heightChange = document.getElementById("height");
-    heightChange.addEventListener("oninput", function() {
+    heightChange.addEventListener("input", function() {
+        document.getElementById("sliderV").innerHTML = "";
         var height = heightChange.value;
         heightText = document.createTextNode(height);
-        var sliderValue = document.getElementById("span");
+        var sliderValue = document.getElementById("sliderV");
         sliderValue.appendChild(heightText);
 
         determineHeightAndThenDrawPyramid()
